@@ -1,0 +1,117 @@
+html {
+    background: #000000 no-repeat url("images/bg.png") center;
+    background-size: cover; 
+    min-height: 100%;
+    }
+a{
+    text-decoration: none;
+    }
+body { 
+    color: #F3AF42; 
+    text-shadow: black 0 0 5px, black 0 0 5px, black 0 0 5px, black 0 0 5px;
+    font-weight: bold;
+    }
+h1 {
+    text-align: center;
+    
+    font-size: calc(3.5em + 3vw);
+    height: 150px;
+    }
+h2 {
+    text-align: center;
+    font-size: calc(1.5em + 0.75vw);
+    transition: color .2s linear
+    } 
+h2:hover {
+    color: #F3CC8D;
+    cursor: pointer;
+    }
+.l1 {
+    color: #F3AF42; 
+    text-align: center;
+    font-size: calc(1.5em + 0.75vw);
+    transition: color .2s linear
+}
+.l1:hover {
+    color: #F3CC8D;
+    cursor: pointer;
+}
+footer {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    }
+.he{
+    position: absolute;
+    z-index: 2;
+    width: 95%;
+    top: 0;
+}
+.media_icon {
+    justify-content: space-between;
+    display: inline-flex;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    }
+.left_grad {
+    height: 96%;
+    width: 100px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1));
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
+.right_grad {
+    height: 96%;
+    width: 100px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
+.top_grad {
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
+.media_item {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 20px;
+    }
+.media_text {
+    font-size: 20px;
+    vertical-align: top;
+    margin: 0 100px;
+    text-decoration: none;
+    }
+.mem {
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
