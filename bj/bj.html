@@ -16,46 +16,49 @@
     </div>
     
     <div class="hitstay">
-        <button> Ещё </button>
-        <button> Стоп </button>
+        <button style="visibility: hidden;" id="hit"> Ещё </button>
+        <button style="visibility: hidden;" id="stay"> Стоп </button>
+        
     </div>
-
+    <div class="hitstay">
+        <button style="visibility: visible;" id="NG"> Новая Игра </button>
+    </div>
     <div class="winlose">
         <p>
             Победы:
         </p>
-        <p>
+        <p id="wins">
             0
         </p>
         <p>
             Поражения:
         </p>
-        <p>
+        <p id="Looses">
             0
         </p>
     </div>   
 
-    <div class="dillertext">
+    <div id="dillerHIDE" style="visibility: hidden;" class="dillertext">
         <p>
             Рука диллера
         </p>
-        <p>
+        <p id="dillerSUM">
             0
         </p>
     </div>   
 
-    <div class="playertext">
+    <div id="dillerHIDE" style="visibility: hidden;" class="playertext">
         <p>
             Рука игрока
         </p>
-        <p>
+        <p id="playerSUM">
             0
         </p>
     </div>   
 
 
 
-    <div class="test"
+    <div id="dillerCARD1" class="test"
         style="top: 10%;
         left: 40%;
         height:  185px;
@@ -63,7 +66,7 @@
         z-index: 2;
         position: absolute;">
     </div>
-    <div class="test"
+    <div id="dillerCARD2" class="test"
         style="top: 10%;
         left: 45%;
         height:  185px;
@@ -71,7 +74,7 @@
         z-index: 3;
         position: absolute;">
     </div>
-    <div class="test"
+    <div id="dillerCARD3" class="test"
         style="top: 10%;
         left: 50%;
         height:  185px;
@@ -79,7 +82,7 @@
         z-index: 4;
         position: absolute;">
     </div>
-    <div class="test"
+    <div id="dillerCARD4" class="test"
         style="top: 10%;
         left: 55%;
         height:  185px;
@@ -87,7 +90,7 @@
         z-index: 5;
         position: absolute;">
     </div>
-    <div class="test"
+    <div id="dillerCARD5" class="test"
         style="top: 10%;
         left: 60%;
         height:  185px;
@@ -95,7 +98,7 @@
         z-index: 6;
         position: absolute;">
     </div>
-    <div class="test"
+    <div id="dillerCARD6" class="test"
         style="top: 10%;
         left: 65%;
         height:  185px;
@@ -103,7 +106,7 @@
         z-index: 7;
         position: absolute;">
     </div>
-    <div class="test"
+    <div id="dillerCARD7" class="test"
         style="top: 10%;
         left: 70%;
         height:  185px;
@@ -113,7 +116,7 @@
     </div>
 
 
-    <div class="test"
+    <div id="playerCARD1" class="test"
         style="top: 60%;
         left: 40%;
         height:  185px;
@@ -121,7 +124,7 @@
         z-index: 2;
         position: absolute;">
     </div>
-    <div class="test"
+    <div id="playerCARD2" class="test"
         style="top: 60%;
         left: 45%;
         height:  185px;
@@ -129,7 +132,7 @@
         z-index: 3;
         position: absolute;">
     </div>
-    <div class="test"
+    <div id="playerCARD3" class="test"
         style="top: 60%;
         left: 50%;
         height:  185px;
@@ -137,7 +140,7 @@
         z-index: 4;
         position: absolute;">
     </div>
-    <div class="test"
+    <div id="playerCARD4" class="test"
         style="top: 60%;
         left: 55%;
         height:  185px;
@@ -145,7 +148,7 @@
         z-index: 5;
         position: absolute;">
     </div>
-    <div class="test"
+    <div id="playerCARD5" class="test"
         style="top: 60%;
         left: 60%;
         height:  185px;
@@ -153,7 +156,7 @@
         z-index: 6;
         position: absolute;">
     </div>
-    <div class="test"
+    <div id="playerCARD6" class="test"
         style="top: 60%;
         left: 65%;
         height:  185px;
@@ -161,7 +164,7 @@
         z-index: 7;
         position: absolute;">
     </div>
-    <div class="test"
+    <div id="playerCARD7" class="test"
         style="top: 60%;
         left: 70%;
         height:  185px;
@@ -177,6 +180,7 @@
 			<a target="_blank" href="https://steamcommunity.com/id/PlsDrop/"><img class="media_item" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/1024px-Steam_icon_logo.svg.png"> </a> 
 			<a target="_blank" href="https://www.youtube.com/channel/UCivlkhdpzzoA22R9fjvIEGQ"><img class="media_item" src="https://svlavra.church.ua/files/2016/02/YouTube-icon-full_color.png"> </a> 
 		</div>
-	</footer> 
+    </footer> 
+<script src="bj.js"></script>
 </body>
 </html>

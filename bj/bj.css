@@ -15,18 +15,19 @@ p {
     font-size: calc(1em + 2vw);
 }
 .test{
-    background: no-repeat url("../deck/рубаха.png") center;
+    background: no-repeat center; 
+    /*url("../deck/рубаха.png")*/
     background-size: cover; 
 }
 .dillertext {
-    top: 20%;
+    top: 15%;
     left: 10%;
     z-index: 50;
     position: absolute;
 
 }
 .playertext {
-    top: 70%;
+    top: 65%;
     left: 10%;
     z-index: 50;
     position: absolute;
@@ -34,7 +35,7 @@ p {
 }
 .winlose {
     top: 45%;
-    left: 37%;
+    left: 40%;
     z-index: 50;
     position: absolute;
     justify-content: space-between;
