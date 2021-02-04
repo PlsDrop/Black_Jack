@@ -265,3 +265,73 @@ hit.addEventListener("click", function () {
 
 
 
+// Кнопка "Стоп", с циклом
+stay.addEventListener("click", function stayLoop() {
+    
+    
+    
+    // Показываем сумму диллера
+    dillerSUM.innerHTML = handTotal(dillerHand);
+    
+
+    if (gameStatus === 0) //первое нажатие
+    {
+        // Показываем карту диллера
+        dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
+        dillerCARD.style.background = `url("../deck/${dillerHand[1]}.png") center no-repeat`;
+        dillerCARD.style.backgroundSize = "cover";
+        gameStatus = 1; // Вход в цикл
+        setTimeout(stayLoop, 750); 
+    }
+    else if (gameStatus === 1) {    
+
+    // Если у диллера меньше 17, он берет еще
+    let dillerVal = handTotal(dillerHand);
+    if (dillerVal > 16 && dillerVal <= 21) // если у диллера больше 17 и меньше 21, идет сравнение
+    {
+        
+        
+        let playerVal = handTotal(playerHand);
+        if (playerVal > dillerVal)
+        {            
+            wins += 1;
+            gameStatus = 2;
+            track();
+            return;
+        }
+        else if (playerVal < dillerVal)
+        {            
+            looses +=1;
+            gameStatus = 2;
+            track();
+            return;
+        }
+        else
+        {            
+            gameStatus = 2;
+            track();
+            return;
+        }
+    }
+    if (dillerVal > 21)
+    {
+        wins += 1;
+        gameStatus = 2;
+        track();
+        return;
+    }
+    else // диллер берет еще карту
+    {
+        dillerHand.push(deckM.shift())
+        dillerPOS += 1;
+        i2 += 1;
+
+        dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
+        dillerCARD.style.background = `url("../deck/${dillerHand[i2]}.png") center no-repeat`;
+        dillerCARD.style.backgroundSize = "cover";
+        dillerSUM.innerHTML = handTotal(dillerHand);
+        setTimeout(stayLoop, 750);
+        return;
+    }   
+    }
+});
