@@ -15,13 +15,13 @@
 	<div class="top_grad">
     </div>
     
-    <div class="hitstay">
-        <button style="visibility: hidden;" id="hit"> Ещё </button>
-        <button style="visibility: hidden;" id="stay"> Стоп </button>
+    <div class="hitstay hidden" id="hitstay">
+        <button id="hit"> Ещё </button>
+        <button id="stay"> Стоп </button>
         
     </div>
-    <div class="hitstay">
-        <button style="visibility: visible;" id="NG"> Новая Игра </button>
+    <div class="NG" id="NG">
+        <button> Новая Игра </button>
     </div>
     <div class="winlose">
         <p>
@@ -33,12 +33,12 @@
         <p>
             Поражения:
         </p>
-        <p id="Looses">
+        <p id="looses">
             0
         </p>
     </div>   
 
-    <div id="dillerHIDE" style="visibility: hidden;" class="dillertext">
+    <div id="dillerHIDE" class="dillertext hidden">
         <p>
             Рука диллера
         </p>
@@ -47,7 +47,7 @@
         </p>
     </div>   
 
-    <div id="dillerHIDE" style="visibility: hidden;" class="playertext">
+    <div id="playerHIDE" class="playertext hidden">
         <p>
             Рука игрока
         </p>
