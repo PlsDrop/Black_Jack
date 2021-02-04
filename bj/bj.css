@@ -11,8 +11,8 @@ body {
     }
 p {
     text-align: center;
-    margin: 0 10px;
-    font-size: calc(1em + 2vw);
+    margin: 0 5px;
+    font-size: calc(0.5em + 2vw + 2vh);
 }
 
 .hidden
@@ -74,7 +74,7 @@ button {
     font-weight: bold;
     text-align: center;
     margin: 0 10px;
-    font-size: calc(1em + 2vw);
+    font-size: calc(0.5em + 2vw + 2vh);
     transition: color .2s linear;
 }
 button:hover {
@@ -117,6 +117,18 @@ button:active, button:focus {
     overflow-x: hidden;
     padding-top: 20px;
     }
+.bottom_grad {
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    z-index: 49;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
 .media_item {
     display: block;
     width: 20px;
@@ -130,16 +142,14 @@ button:active, button:focus {
     margin: 0 100px;
     text-decoration: none;
     }
+
 .mem {
-    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
-    position: absolute;
     height: 100px;
     width: 100%;
     position: absolute;
-    z-index: 1;
+    z-index: 50;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
     overflow-x: hidden;
     padding-top: 20px;
     }

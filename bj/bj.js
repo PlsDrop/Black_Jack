@@ -90,7 +90,7 @@ let newGame = function () {
 
     playerCARD = document.getElementById(`playerCARD${playerPOS}`);
     playerCARD.style.background = `url("../deck/${playerHand[i1]}.png") center no-repeat`;
-    playerCARD.style.backgroundSize = "cover";
+    playerCARD.style.backgroundSize = "contain";
 
     playerSUM.innerHTML = handTotal(playerHand);
     
@@ -101,7 +101,7 @@ let newGame = function () {
 
     dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
     dillerCARD.style.background = `url("../deck/${dillerHand[i2]}.png") center no-repeat`;
-    dillerCARD.style.backgroundSize = "cover";
+    dillerCARD.style.backgroundSize = "contain";
     
     dillerSUM.innerHTML = deck[dillerHand[0]];
     if (deck[dillerHand[0]] === 1 ) {
@@ -115,7 +115,7 @@ let newGame = function () {
 
     playerCARD = document.getElementById(`playerCARD${playerPOS}`);
     playerCARD.style.background = `url("../deck/${playerHand[i1]}.png") center no-repeat`;
-    playerCARD.style.backgroundSize = "cover";
+    playerCARD.style.backgroundSize = "contain";
 
     playerSUM.innerHTML = handTotal(playerHand);
 
@@ -126,7 +126,7 @@ let newGame = function () {
 
     dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
     dillerCARD.style.background = `url("../deck/bruh.png") center no-repeat`;
-    dillerCARD.style.backgroundSize = "cover";
+    dillerCARD.style.backgroundSize = "contain";
     
 
     // Проверяем не победил ли игрок при первой раздаче
@@ -150,7 +150,7 @@ let newGame = function () {
 
         dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
         dillerCARD.style.background = `url("../deck/${dillerHand[1]}.png") center no-repeat`;
-        dillerCARD.style.backgroundSize = "cover";
+        dillerCARD.style.backgroundSize = "contain";
         dillerSUM.innerHTML = handTotal(dillerHand);
         
         looses += 1;
@@ -231,7 +231,7 @@ hit.addEventListener("click", function () {
 
     playerCARD = document.getElementById(`playerCARD${playerPOS}`);
     playerCARD.style.background = `url("../deck/${playerHand[i1]}.png") center no-repeat`;
-    playerCARD.style.backgroundSize = "cover";
+    playerCARD.style.backgroundSize = "contain";
 
     playerSUM.innerHTML = handTotal(playerHand);
    
@@ -241,7 +241,7 @@ hit.addEventListener("click", function () {
     {
         dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
         dillerCARD.style.background = `url("../deck/${dillerHand[1]}.png") center no-repeat`;
-        dillerCARD.style.backgroundSize = "cover";
+        dillerCARD.style.backgroundSize = "contain";
         dillerSUM.innerHTML = handTotal(dillerHand);
         
         looses += 1;
@@ -279,7 +279,7 @@ stay.addEventListener("click", function stayLoop() {
         // Показываем карту диллера
         dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
         dillerCARD.style.background = `url("../deck/${dillerHand[1]}.png") center no-repeat`;
-        dillerCARD.style.backgroundSize = "cover";
+        dillerCARD.style.backgroundSize = "contain";
         gameStatus = 1; // Вход в цикл
         setTimeout(stayLoop, 750); 
     }
@@ -328,7 +328,7 @@ stay.addEventListener("click", function stayLoop() {
 
         dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
         dillerCARD.style.background = `url("../deck/${dillerHand[i2]}.png") center no-repeat`;
-        dillerCARD.style.backgroundSize = "cover";
+        dillerCARD.style.backgroundSize = "contain";
         dillerSUM.innerHTML = handTotal(dillerHand);
         setTimeout(stayLoop, 750);
         return;
