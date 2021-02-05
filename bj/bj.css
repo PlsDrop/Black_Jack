@@ -41,9 +41,13 @@ p {
     position: absolute;
 
 }
-.winlose {
+.dillerSTAND {
     top: 45%;
     left: 40%;
+    z-index: 50;
+    position: absolute;
+}
+.winlose {
     z-index: 50;
     position: absolute;
     justify-content: space-between;

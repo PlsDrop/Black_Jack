@@ -20,6 +20,7 @@ let winsP = document.getElementById('wins');
 let loosesP = document.getElementById('looses');
 let dillerHIDE = document.getElementById('dillerHIDE');
 let playerHIDE = document.getElementById('playerHIDE');
+let dillerSTAND = document.getElementById('dillerSTAND');
 
 // Объявляем переменные для текущего статуса игры, для руки диллера/руки игрока и т.д. 
 let gameStatus = 0;
@@ -59,6 +60,7 @@ let newGame = function () {
     // Показываем поля сумм карт
     dillerHIDE.classList.remove("hidden");
     playerHIDE.classList.remove("hidden");
+    dillerSTAND.innerHTML = "Дилер должен остановиться на 17"
 
     // Убираем карты со страницы 
     clearPAGE(playerHand, dillerHand);
@@ -132,6 +134,7 @@ let newGame = function () {
     // Проверяем не победил ли игрок при первой раздаче
     if (handTotal(playerHand) === 21)
     {
+        dillerSTAND.innerHTML = "Ты победил, в стартовой руке 21!"
         wins += 1;
         track();
 
@@ -147,13 +150,14 @@ let newGame = function () {
     // Проверяем не победил ли диллер при первой раздаче
     if (handTotal(dillerHand) === 21)
     {
-
+        dillerSTAND.innerHTML = "Дилер победил, в стартовой руке 21!"
         dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
         dillerCARD.style.background = `url("../deck/${dillerHand[1]}.png") center no-repeat`;
         dillerCARD.style.backgroundSize = "contain";
         dillerSUM.innerHTML = handTotal(dillerHand);
         
         looses += 1;
+
         track();
 
         //games += 1;        
@@ -244,21 +248,13 @@ hit.addEventListener("click", function () {
         dillerCARD.style.backgroundSize = "contain";
         dillerSUM.innerHTML = handTotal(dillerHand);
         
+        dillerSTAND.innerHTML = "Ты проиграл, перебор!"
+
         looses += 1;
         track();
         return;
     }
-    //Проверяем не победил ли игрок
-    else if (handTotal(playerHand) === 21)
-    {
-        wins += 1;
-        track(); 
-        //games += 1;       
-        //gameStatus = 1; // маркер что бы скрыть карты диллера
-        //textUpdates.innerHTML = "Ты победил, в стартовой руке 21!";
-        //gameStatus = 2; // маркер что игра закончена
-        return;
-    }
+
     //jsbApp.textUpdates.innerHTML = 
     return; 
 });
@@ -293,21 +289,24 @@ stay.addEventListener("click", function stayLoop() {
         
         let playerVal = handTotal(playerHand);
         if (playerVal > dillerVal)
-        {            
+        {          
+            dillerSTAND.innerHTML = "Ты победил, твоя рука больше!"  
             wins += 1;
             gameStatus = 2;
             track();
             return;
         }
         else if (playerVal < dillerVal)
-        {            
+        {          
+            dillerSTAND.innerHTML = "Ты проиграл, твоя рука меньше!"  
             looses +=1;
             gameStatus = 2;
             track();
             return;
         }
         else
-        {            
+        {         
+            dillerSTAND.innerHTML = "Ничья, ваши карты равны!"   
             gameStatus = 2;
             track();
             return;
@@ -315,6 +314,7 @@ stay.addEventListener("click", function stayLoop() {
     }
     if (dillerVal > 21)
     {
+        dillerSTAND.innerHTML = "Ты победил, у дилера перебор!"
         wins += 1;
         gameStatus = 2;
         track();
