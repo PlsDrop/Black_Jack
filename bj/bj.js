@@ -18,8 +18,8 @@ let hitstay = document.getElementById('hitstay');
 // Объявляем переменные полей победы/поражения/суммы карт
 let winsP = document.getElementById('wins');
 let loosesP = document.getElementById('looses');
-let dillerHIDE = document.getElementById('dillerHIDE');
-let playerHIDE = document.getElementById('playerHIDE');
+/* let dillerHIDE = document.getElementById('dillerHIDE');
+let playerHIDE = document.getElementById('playerHIDE'); */
 let dillerSTAND = document.getElementById('dillerSTAND');
 
 // Объявляем переменные для текущего статуса игры, для руки диллера/руки игрока и т.д. 
@@ -29,7 +29,6 @@ let playerHand = [];
 let wins = 0;
 let looses = 0;
 let games = 0; 
-
 
 // Объявляем переменные для управления позицией карт в CSS
 let playerPOS = 0;
@@ -58,8 +57,8 @@ function shuffle(array) {
 let newGame = function () {
 
     // Показываем поля сумм карт
-    dillerHIDE.classList.remove("hidden");
-    playerHIDE.classList.remove("hidden");
+    /* dillerHIDE.classList.remove("hidden");
+    playerHIDE.classList.remove("hidden"); */
     dillerSTAND.innerHTML = "Дилер должен остановиться на 17"
 
     // Убираем карты со страницы 
@@ -93,6 +92,7 @@ let newGame = function () {
     playerCARD = document.getElementById(`playerCARD${playerPOS}`);
     playerCARD.style.background = `url("../deck/${playerHand[i1]}.png") center no-repeat`;
     playerCARD.style.backgroundSize = "contain";
+    playerCARD.classList.remove("hidden");
 
     playerSUM.innerHTML = handTotal(playerHand);
     
@@ -104,6 +104,7 @@ let newGame = function () {
     dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
     dillerCARD.style.background = `url("../deck/${dillerHand[i2]}.png") center no-repeat`;
     dillerCARD.style.backgroundSize = "contain";
+    dillerCARD.classList.remove("hidden");
     
     dillerSUM.innerHTML = deck[dillerHand[0]];
     if (deck[dillerHand[0]] === 1 ) {
@@ -118,6 +119,7 @@ let newGame = function () {
     playerCARD = document.getElementById(`playerCARD${playerPOS}`);
     playerCARD.style.background = `url("../deck/${playerHand[i1]}.png") center no-repeat`;
     playerCARD.style.backgroundSize = "contain";
+    playerCARD.classList.remove("hidden");
 
     playerSUM.innerHTML = handTotal(playerHand);
 
@@ -129,6 +131,7 @@ let newGame = function () {
     dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
     dillerCARD.style.background = `url("../deck/bruh.png") center no-repeat`;
     dillerCARD.style.backgroundSize = "contain";
+    dillerCARD.classList.remove("hidden");
     
 
     // Проверяем не победил ли игрок при первой раздаче
@@ -154,6 +157,7 @@ let newGame = function () {
         dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
         dillerCARD.style.background = `url("../deck/${dillerHand[1]}.png") center no-repeat`;
         dillerCARD.style.backgroundSize = "contain";
+        dillerCARD.classList.remove("hidden");
         dillerSUM.innerHTML = handTotal(dillerHand);
         
         looses += 1;
@@ -168,9 +172,16 @@ let newGame = function () {
     }
     
     // Убираем/показываем кнопки и поля если никто не выиграл с первой раздачи
-    NG.classList.add("hidden");
-    hitstay.classList.remove("hidden");
-
+    /* NG.classList.add("hidden");
+    hitstay.classList.remove("hidden"); */
+    
+    NG.style.color = "rgba(243, 175, 66, 0.5)";
+    NG.disabled = true;
+    stay.disabled = false;
+    hit.disabled = false;
+    hit.style.color = "rgba(243, 175, 66, 1)";
+    stay.style.color = "rgba(243, 175, 66, 1)";
+    
 };
 
 // Функция очистки страницы от карт
@@ -179,13 +190,30 @@ let clearPAGE = function(hand1, hand2) {
         playerCARD = document.getElementById(`playerCARD${i+1}`);
         playerCARD.style.background = '';
         playerCARD.style.backgroundSize = '';
+        playerCARD.classList.add("hidden");
     }
     for (let j = 0; j < hand2.length; j++) {
         dillerCARD = document.getElementById(`dillerCARD${j+1}`);
         dillerCARD.style.background = '';
         dillerCARD.style.backgroundSize = '';
+        dillerCARD.classList.add("hidden");
     }
 };
+
+/* let clearPAGE = function(hand1, hand2) {
+    for (let i = 0; i < hand1.length; i++) {
+        playerCARD = document.getElementById(`playerCARD${i+1}`);
+        playerCARD.style.background = `url("../deck/${playerHand[i]}.png") center no-repeat`;
+        playerCARD.style.backgroundSize = "contain";
+        playerCARD.classList.remove("hidden");
+    }
+    for (let j = 0; j < hand2.length; j++) {
+        dillerCARD = document.getElementById(`dillerCARD${j+1}`);
+        dillerCARD.style.background = `url("../deck/${dillerHand[j]}.png") center no-repeat`;
+        dillerCARD.style.backgroundSize = "contain";
+        dillerCARD.classList.remove("hidden");
+    }
+}; */
 
 // Функция подсчета суммы карт
 let handTotal = function (hand) {
@@ -218,15 +246,24 @@ let handTotal = function (hand) {
 let track = function () {
     winsP.innerHTML = wins;
     loosesP.innerHTML = looses;
-    NG.classList.remove("hidden");
-    hitstay.classList.add("hidden");
-}
+    NG.disabled = false;
+    NG.style.color = "rgba(243, 175, 66, 1)";
+    hit.style.color = "rgba(243, 175, 66, 0.5)";
+    stay.style.color = "rgba(243, 175, 66, 0.5)";
+    hit.disabled = true;
+    stay.disabled = true;
+    
+    /* NG.classList.remove("hidden");
+    hitstay.classList.add("hidden"); */
+} 
 
 // Назначаем на кнопку новой игры соответсвующую функцию
 NG.addEventListener("click", newGame);
+//NG.addEventListener("keyup", newGame);
 
-// Кнопка "Еще"
-hit.addEventListener("click", function () {
+
+
+let hitClick = function () {
     
     // Даем игроку карту и показываем ее на странице
     playerHand.push(deckM.shift())
@@ -236,6 +273,7 @@ hit.addEventListener("click", function () {
     playerCARD = document.getElementById(`playerCARD${playerPOS}`);
     playerCARD.style.background = `url("../deck/${playerHand[i1]}.png") center no-repeat`;
     playerCARD.style.backgroundSize = "contain";
+    playerCARD.classList.remove("hidden");
 
     playerSUM.innerHTML = handTotal(playerHand);
    
@@ -246,6 +284,7 @@ hit.addEventListener("click", function () {
         dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
         dillerCARD.style.background = `url("../deck/${dillerHand[1]}.png") center no-repeat`;
         dillerCARD.style.backgroundSize = "contain";
+        dillerCARD.classList.remove("hidden");
         dillerSUM.innerHTML = handTotal(dillerHand);
         
         dillerSTAND.innerHTML = "Ты проиграл, перебор!"
@@ -257,18 +296,19 @@ hit.addEventListener("click", function () {
 
     //jsbApp.textUpdates.innerHTML = 
     return; 
-});
-
-
-
+};
+hit.addEventListener("click", hitClick);
 // Кнопка "Стоп", с циклом
-stay.addEventListener("click", function stayLoop() {
-    
-    
-    
+
+let stayLoop = function () {
+
     // Показываем сумму диллера
     dillerSUM.innerHTML = handTotal(dillerHand);
-    
+
+    hit.style.color = "rgba(243, 175, 66, 0.5)";
+    stay.style.color = "rgba(243, 175, 66, 0.5)";
+    hit.disabled = true;
+    stay.disabled = true;
 
     if (gameStatus === 0) //первое нажатие
     {
@@ -276,6 +316,7 @@ stay.addEventListener("click", function stayLoop() {
         dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
         dillerCARD.style.background = `url("../deck/${dillerHand[1]}.png") center no-repeat`;
         dillerCARD.style.backgroundSize = "contain";
+        dillerCARD.classList.remove("hidden");
         gameStatus = 1; // Вход в цикл
         setTimeout(stayLoop, 750); 
     }
@@ -329,9 +370,12 @@ stay.addEventListener("click", function stayLoop() {
         dillerCARD = document.getElementById(`dillerCARD${dillerPOS}`);
         dillerCARD.style.background = `url("../deck/${dillerHand[i2]}.png") center no-repeat`;
         dillerCARD.style.backgroundSize = "contain";
+        dillerCARD.classList.remove("hidden");
         dillerSUM.innerHTML = handTotal(dillerHand);
         setTimeout(stayLoop, 750);
         return;
     }   
     }
-});
+};
+
+stay.addEventListener("click", stayLoop);

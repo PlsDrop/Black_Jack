@@ -1,18 +1,44 @@
 html {
-    background: #000000 no-repeat url("../images/fon.jpg") center;
-    background-size: cover; 
+     
     min-height: 100%;
+    min-width: 100%;
+    margin: 0;
     }
+.face {
+    margin: 0;
+    left: 2%;
+    top: 3%;
+    width: 22.76%;
+    height: 12.22%;
+    position: absolute;
+    z-index: 50;
+}
+.ttt {
+    font-size: 20px;
+}
+.ttt2 {
+    font-size: 20px;
+}
+.test3 {
+    color: #f3af42; 
+    background: #000000 no-repeat url("../images/1.jpg") center;
+    background-size: contain;
+    margin: 0;
+    position: fixed;
+}
 
 body { 
-    color: #F3AF42; 
+    color: rgb(243, 175, 66); 
     text-shadow: black 0 0 5px, black 0 0 5px, black 0 0 5px, black 0 0 5px;
     font-weight: bold;
-    }
+    min-height: 100%;
+    min-width: 100%;
+    background: #000000;
+    margin: 0;
+}
 p {
     text-align: center;
     margin: 0 5px;
-    font-size: calc(0.5em + 2vw + 2vh);
 }
 
 .hidden
@@ -28,57 +54,69 @@ p {
     background-size: cover; 
 }
 .dillertext {
-    top: 15%;
-    left: 10%;
+    top: 81.5%;
+    left: 4%;
+    display: inline-flex;
     z-index: 50;
     position: absolute;
 
 }
 .playertext {
-    top: 65%;
-    left: 10%;
+    top: 86%;
+    left: 4%;
+    display: inline-flex;
     z-index: 50;
     position: absolute;
 
 }
 .dillerSTAND {
-    top: 45%;
-    left: 40%;
     z-index: 50;
     position: absolute;
 }
 .winlose {
+    top: 91%;
+    left: 4%;
     z-index: 50;
     position: absolute;
     justify-content: space-between;
     display: inline-flex;
 }
 .hitstay {
-    top: 45%;
-    left: 10%;
+    top: 64%;
+    right: 2%;
+    display: block;
+    z-index: 50;
     position: absolute;
-    justify-content: space-between;
-    display: inline-flex;
 }
-
-.NG {
-    top: 45%;
-    left: 10%;
+.hit {
+    top: 64%;
+    right: 2%;
+    display: block;
+    z-index: 50;
     position: absolute;
-    justify-content: space-between;
-    display: inline-flex;
+}
+.stay {
+    top: 91.5%;
+    right: 2%;
+    display: block;
+    z-index: 50;
+    position: absolute;
+}
+.NG {
+    top: 69.5%;
+    right: 2%;
+    position: absolute;
+    z-index: 50;
 }
 
 button {
     text-decoration: none;
-    border: solid 2px;
+    border: solid 0px;
     background-color: transparent;
     color: #F3AF42; 
     text-shadow: black 0 0 5px, black 0 0 5px, black 0 0 5px, black 0 0 5px;
     font-weight: bold;
     text-align: center;
-    margin: 0 10px;
-    font-size: calc(0.5em + 2vw + 2vh);
     transition: color .2s linear;
 }
 button:hover {
@@ -89,8 +127,8 @@ button:active, button:focus {
     outline: none;
   }
 .left_grad {
-    height: 96%;
-    width: 100px;
+    height: 97.5%;
+    width: 14%;
     position: absolute;
     z-index: 1;
     top: 0;
@@ -100,8 +138,8 @@ button:active, button:focus {
     padding-top: 20px;
     }
 .right_grad {
-    height: 96%;
-    width: 100px;
+    height: 97.5%;
+    width: 14%;
     position: absolute;
     z-index: 1;
     top: 0;
@@ -111,7 +149,7 @@ button:active, button:focus {
     padding-top: 20px;
     }
 .top_grad {
-    height: 100px;
+    height: 14%;
     width: 100%;
     position: absolute;
     z-index: 1;
@@ -123,7 +161,7 @@ button:active, button:focus {
     }
 .bottom_grad {
     background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
-    height: 100px;
+    height: 14%;
     width: 100%;
     position: absolute;
     z-index: 49;
@@ -133,35 +171,34 @@ button:active, button:focus {
     overflow-x: hidden;
     padding-top: 20px;
     }
-.media_item {
-    display: block;
-    width: 20px;
-    height: 20px;
-    margin: 20px;
-    z-index: 50;
-    }
-.media_text {
-    font-size: 20px;
-    vertical-align: top;
-    margin: 0 100px;
-    text-decoration: none;
-    }
 
-.mem {
-    height: 100px;
-    width: 100%;
-    position: absolute;
+.media_text {
+    top: 1%;
+    right: 0;
     z-index: 50;
-    bottom: 0;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-    }
-.media_icon {
-    justify-content: space-between;
-    display: inline-flex;
     position: absolute;
-    bottom: 0;
-    z-index: 50;
-    align-items: center;
     }
+.icon1 {
+    top: 1%;
+    right: 15%;
+    height: 5%;
+    width: 3%;
+    z-index: 50;
+    position: absolute;
+}
+.icon2 {
+    top: 1%;
+    right: 20%;
+    height: 5%;
+    width: 3%;
+    z-index: 50;
+    position: absolute;
+}
+.icon3 {
+    top: 1%;
+    right: 25%;
+    height: 5%;
+    width: 3%;
+    z-index: 50;
+    position: absolute;
+}
