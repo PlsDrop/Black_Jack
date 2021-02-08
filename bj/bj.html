@@ -26,6 +26,13 @@
                 Дилер должен остановиться на 17
             </p>
         </div>
+
+        <p id="betVL" class="hidden" style="
+        top: 6%;
+        right: 2%;
+        position: absolute;
+        z-index: 50;">Получено 200 фишек.</p>
+
         <div style="
         width: 23%;
         height: 17.1%;
@@ -37,12 +44,20 @@
         background-size: contain;">
         </div>
         
-        <button style= "font-size: 20px; color: rgba(243, 175, 66, 0.5);" disabled class="ttt2 hit" id="hit"> Ещё карту   F) </button>
-        <button style= "font-size: 20px; color: rgba(243, 175, 66, 0.5);" disabled class="ttt2 stay" id="stay"> Достаточно   R) </button>
+        <button style= "font-size: 20px; color: rgba(243, 175, 66, 0.5);" disabled class="ttt2 hit hidden" id="hit"> Ещё карту   E) </button>
+        <button style= "font-size: 20px; color: rgba(243, 175, 66, 0.5);" disabled class="ttt2 stay hidden" id="stay"> Достаточно   Q) </button>
         <button style= "font-size: 20px; color: rgba(243, 175, 66, 0.95);" class="ttt2 NG" id="NG"> Новая раздача W)</button>
         
+        <button style= "font-size: 20px; color: rgba(243, 175, 66, 0.95);" class="ttt2 betPlus" id="betPlus"> Увеличить ставку E)</button>
+        <button style= "font-size: 20px; color: rgba(243, 175, 66, 0.5);"  class="ttt2 betMinus" id="betMinus"> Уменьшить ставку Q)</button>
+        <button style= "font-size: 20px; color: rgba(243, 175, 66, 0.95);" class="ttt2 betMAX" id="betMAX"> Макс. ставка S)</button>
+        
+        <button style= "font-size: 20px; color: rgba(243, 175, 66, 0.5);" class="ttt2 showSUM" id="showSUM"> Показать суммы карт [Space]</button>
 
-        <div class="winlose">
+        <button style= "font-size: 20px; color: rgba(243, 175, 66, 0.5);" disabled class="ttt2 stopBut hidden" id="stopBut"> Отказ от игры S)</button>
+        <button style= "font-size: 20px; color: rgba(243, 175, 66, 0.5);" disabled class="ttt2 doubleBut hidden" id="doubleBut"> Удвоить ставку W)</button>
+
+        <div style="visibility: hidden;" class="winlose">
             <p>
                 Победы:
             </p>
@@ -57,18 +72,7 @@
             </p>
         </div>   
 
-
-
-        <div id="dillerHIDE" class="dillertext">
-            <p>
-                Рука дилера:
-            </p>
-            <p id="dillerSUM">
-                0
-            </p>
-        </div>   
-
-        <div id="playerHIDE" class="playertext">
+        <div id="playerHIDE" class="playertext hidden">
             <p>
                 Рука игрока:
             </p>
@@ -77,7 +81,44 @@
             </p>
         </div>   
 
+        <div id="dillerHIDE" class="dillertext hidden">
+            <p>
+                Рука дилера:
+            </p>
+            <p id="dillerSUM">
+                0
+            </p>
+        </div>   
 
+        <div class="betDIV">
+            <p>
+                Текущая ставка:
+            </p>
+            <p style="right: 0px; position: absolute;" id="betP">
+                1
+            </p>
+        </div>   
+
+        <div class="chipsDIV">
+            <p>
+                Фишек:
+            </p>
+            <p style="right: 0px; position: absolute;" id="chipsP">
+                10000
+            </p>
+        </div>  
+
+        <div class="statDIV">
+            <p>
+                "Ультра-Люкс" - итог:
+            </p>
+            <p style="right: 0px; position: absolute;" id="statP">
+                0
+            </p>
+        </div>  
+        <!-- <img id="keshIMG" src="../images/LuxeChips/1.jpg" class="keshIMG"></img> -->
+        <img id="chipsIMG" src="../images/LuxeChips/1.jpg" class="chipsIMG"></img>
+        
         <div id="dillerCARD1" class="test hidden"
             style="top: 17%;
             left: 33%;
@@ -226,7 +267,8 @@
         <p class="media_text">Made By PlsDrop </p>
     
     </div>
-<script src="bj.js"></script>
 <script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="func.js"></script>
+<script type="text/javascript" src="bj.js"></script>
 </body>
 </html>

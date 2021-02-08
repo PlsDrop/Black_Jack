@@ -13,6 +13,17 @@ html {
     position: absolute;
     z-index: 50;
 }
+
+.chipsIMG {
+    left: 53.4%;
+    top: 45.9%;
+    width: 26.614%;
+    height: 38.333%;
+    position: absolute;
+    z-index: 1;
+}
+
+
 .ttt {
     font-size: 20px;
 }
@@ -53,17 +64,45 @@ p {
     /*url("../deck/рубаха.png")*/
     background-size: cover; 
 }
-.dillertext {
+
+.betDIV {
     top: 81.5%;
     left: 4%;
+    width: 22%;
+    display: inline-flex;
+    z-index: 50;
+    position: absolute;
+}
+
+.chipsDIV {
+    top: 86%;
+    left: 4%;
+    width: 22%;
+    display: inline-flex;
+    z-index: 50;
+    position: absolute;
+}
+
+.statDIV {
+    top: 91%;
+    left: 4%;
+    width: 22%;
+    z-index: 50;
+    position: absolute;
+    display: inline-flex;
+}
+
+.dillertext {
+    top: 63.5%;
+    left: 1%;
     display: inline-flex;
     z-index: 50;
     position: absolute;
 
 }
 .playertext {
-    top: 86%;
-    left: 4%;
+    top: 68%;
+    left: 1%;
     display: inline-flex;
     z-index: 50;
     position: absolute;
@@ -74,7 +113,7 @@ p {
     position: absolute;
 }
 .winlose {
-    top: 91%;
+    top: 71%;
     left: 4%;
     z-index: 50;
     position: absolute;
@@ -82,14 +121,14 @@ p {
     display: inline-flex;
 }
 .hitstay {
-    top: 64%;
+    top: 75%;
     right: 2%;
     display: block;
     z-index: 50;
     position: absolute;
 }
 .hit {
-    top: 64%;
+    top: 75%;
     right: 2%;
     display: block;
     z-index: 50;
@@ -103,8 +142,48 @@ p {
     position: absolute;
 }
 .NG {
-    top: 69.5%;
+    top: 75%;
     right: 2%;
+    position: absolute;
+    z-index: 50;
+}
+
+.doubleBut {
+    top: 80.5%;
+    right: 2%;
+    position: absolute;
+    z-index: 50;
+}
+
+.betPlus {
+    top: 80.5%;
+    right: 2%;
+    position: absolute;
+    z-index: 50;
+}
+
+.betMinus {
+    top: 86%;
+    right: 2%;
+    position: absolute;
+    z-index: 50;
+}
+
+.betMAX {
+    top: 91.5%;
+    right: 2%;
+    position: absolute;
+    z-index: 50;
+}
+.stopBut {
+    top: 86%;
+    right: 2%;
+    position: absolute;
+    z-index: 50;
+}
+.showSUM {
+    top: 73%;
+    left: 1%;
     position: absolute;
     z-index: 50;
 }
